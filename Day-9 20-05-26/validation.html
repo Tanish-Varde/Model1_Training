@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        .form-card {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #222;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .error {
+            display: block;
+            min-height: 18px;
+            margin-bottom: 6px;
+            color: #d93025;
+            font-size: 13px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cfd6dd;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4c8bf5;
+        }
+
+        .invalid {
+            border-color: #d93025;
+            background: #fff7f7;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 14px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .success {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #e8f7ee;
+            color: #166534;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-card">
+        <h1>Simple Form</h1>
+
+        <form id="myForm" novalidate>
+            <div class="field">
+                <span class="error" id="nameError"></span>
+                <input type="text" id="name" placeholder="Name">
+            </div>
+
+            <div class="field">
+                <span class="error" id="emailError"></span>
+                <input type="text" id="email" placeholder="Email">
+            </div>
+
+            <div class="field">
+                <span class="error" id="numberError"></span>
+                <input type="text" id="number" placeholder="Number">
+            </div>
+
+            <div class="field">
+                <span class="error" id="passwordError"></span>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+
+            <button type="submit">Submit</button>
+            <div class="success" id="successMessage">Form submitted successfully.</div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const numberInput = document.getElementById('number');
+        const passwordInput = document.getElementById('password');
+
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const numberError = document.getElementById('numberError');
+        const passwordError = document.getElementById('passwordError');
+        const successMessage = document.getElementById('successMessage');
+
+        function showError(input, errorElement, message) {
+            input.classList.add('invalid');
+            errorElement.textContent = message;
+        }
+
+        function clearError(input, errorElement) {
+            input.classList.remove('invalid');
+            errorElement.textContent = '';
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let isValid = true;
+
+            const nameValue = nameInput.value.trim();
+            const emailValue = emailInput.value.trim();
+            const numberValue = numberInput.value.trim();
+            const passwordValue = passwordInput.value.trim();
+
+            if (nameValue === '') {
+                showError(nameInput, nameError, 'Name is required.');
+                isValid = false;
+            } else {
+                clearError(nameInput, nameError);
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailValue === '') {
+                showError(emailInput, emailError, 'Email is required.');
+                isValid = false;
+            } else if (!emailPattern.test(emailValue)) {
+                showError(emailInput, emailError, 'Enter a valid email address.');
+                isValid = false;
+            } else {
+                clearError(emailInput, emailError);
+            }
+
+            const numberPattern = /^\d+$/;
+            if (numberValue === '') {
+                showError(numberInput, numberError, 'Number is required.');
+                isValid = false;
+            } else if (!numberPattern.test(numberValue)) {
+                showError(numberInput, numberError, 'Only digits are allowed.');
+                isValid = false;
+            } else {
+                clearError(numberInput, numberError);
+            }
+
+            if (passwordValue === '') {
+                showError(passwordInput, passwordError, 'Password is required.');
+                isValid = false;
+            } else if (passwordValue.length < 6) {
+                showError(passwordInput, passwordError, 'Password must be at least 6 characters.');
+                isValid = false;
+            } else {
+                clearError(passwordInput, passwordError);
+            }
+
+            if (isValid) {
+                successMessage.style.display = 'block';
+                form.reset();
+            } else {
+                successMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

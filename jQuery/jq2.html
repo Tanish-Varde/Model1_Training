@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div id="first-div"
+        style="width: 50%; float: left; border: 1px solid black; height: 200px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+        <div id="inner-div" style="width: 100px; height: 100px; background-color: lightblue; margin: auto;"></div>
+    </div>
+    <div id="second-div"
+        style="width: 50%; float: left; border: 1px solid black; height: 200px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+    </div>
+    <button id="move-button" style="display: block; margin: 20px auto;">Move Div</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#move-button').click(function () {
+                $('#inner-div').appendTo('#second-div');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

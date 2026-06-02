@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <main class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+        <section class="w-full max-w-4xl rounded-3xl bg-white p-6 shadow-xl ring-1 ring-slate-200">
+            <div class="mb-6">
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-600">Tailwind Flex Box</p>
+                <h1 class="mt-2 text-3xl font-bold text-slate-900">Flex layout</h1>
+                <p class="mt-2 text-slate-600">This box uses Tailwind flex utilities to align three cards with clear spacing and contrast.</p>
+            </div>
+
+            <div class="flex flex-col gap-4 md:flex-row">
+                <div class="flex-1 rounded-2xl bg-sky-500 p-6 text-white shadow-lg">
+                    <h2 class="text-xl font-semibold">Flex Item 1</h2>
+                    <p class="mt-2 text-sky-50">This card grows naturally inside the flex container.</p>
+                </div>
+
+                <div class="flex-1 rounded-2xl bg-emerald-500 p-6 text-white shadow-lg">
+                    <h2 class="text-xl font-semibold">Flex Item 2</h2>
+                    <p class="mt-2 text-emerald-50">Spacing and alignment are handled with Tailwind utilities.</p>
+                </div>
+
+                <div class="flex-1 rounded-2xl bg-amber-500 p-6 text-white shadow-lg">
+                    <h2 class="text-xl font-semibold">Flex Item 3</h2>
+                    <p class="mt-2 text-amber-50">On mobile, these stack; on larger screens, they sit side by side.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

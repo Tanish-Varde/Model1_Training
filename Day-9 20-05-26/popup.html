@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Popups Demo</h1>
+
+    <button onclick="showAlert()">Alert</button>
+    <button onclick="showConfirm()">Confirm</button>
+    <button onclick="showPrompt()">Prompt</button>
+
+    <div id="result" style="margin-top: 20px; padding: 10px; background-color: #f0f0f0; border-radius: 5px;"></div>
+
+    <script>
+
+        function showAlert() {
+            alert('This is an Alert Popup!\nClick OK to continue.');
+        }
+
+        function showConfirm() {
+            const result = confirm('Do you want to continue? Click OK or Cancel.');
+            const resultDiv = document.getElementById('result');
+
+            if (result) {
+                resultDiv.innerHTML = '<strong>Confirm Result:</strong> User clicked OK (True)';
+                resultDiv.style.backgroundColor = '#90EE90';
+            } else {
+                resultDiv.innerHTML = '<strong>Confirm Result:</strong> User clicked Cancel (False)';
+                resultDiv.style.backgroundColor = '#FFB6C6';
+            }
+        }
+
+        function showPrompt() {
+            const userInput = prompt('Please enter your name:', 'John Doe');
+            const resultDiv = document.getElementById('result');
+
+            if (userInput !== null) {
+                resultDiv.innerHTML = `<strong>Prompt Result:</strong> User entered: "<em>${userInput}</em>"`;
+                resultDiv.style.backgroundColor = '#87CEEB';
+            } else {
+                resultDiv.innerHTML = '<strong>Prompt Result:</strong> User clicked Cancel (null)';
+                resultDiv.style.backgroundColor = '#FFB6C6';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
