@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Responsive Media Query Example</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 900px;
+
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+
+        text-align: center;
+
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        font-size: 45px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 22px;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      .cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .card {
+        flex: 1;
+        background: #4facfe;
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+
+        transition: 0.5s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card h2 {
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 35px;
+        }
+
+        p {
+          font-size: 19px;
+        }
+
+        .cards {
+          flex-direction: column;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        .card {
+          padding: 20px;
+        }
+
+        .card h2 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Responsive Media Query Design</h1>
+
+      <p>
+        This webpage automatically adjusts its layout according to different
+        screen sizes using CSS Media Queries.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h2>HTML</h2>
+          <p>Structure of webpage</p>
+        </div>
+
+        <div class="card">
+          <h2>CSS</h2>
+          <p>Design and styling</p>
+        </div>
+
+        <div class="card">
+          <h2>JavaScript</h2>
+          <p>Interactive functionality</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

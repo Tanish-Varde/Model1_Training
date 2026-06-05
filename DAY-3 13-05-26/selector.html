@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Birthday Invitation Card</title>
+
+    <style>
+      /* Universal Selector */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Element Selector */
+      body {
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Class Selector */
+      .card {
+        width: 650px;
+        background: white;
+        padding: 40px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        border: 6px solid #ff4081;
+      }
+
+      /* Class Selector */
+      .emoji {
+        font-size: 40px;
+      }
+
+      /* Element Selector */
+      h1 {
+        color: #ff006e;
+        font-size: 50px;
+        margin: 15px 0;
+      }
+
+      /* Element Selector */
+      h2 {
+        color: #444;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      /* Class Selector */
+      .message {
+        font-size: 20px;
+        color: #555;
+        line-height: 1.8;
+      }
+
+      /* ID Selector */
+      #birthday-name {
+        font-size: 40px;
+        color: #d00000;
+        font-weight: bold;
+        margin: 25px 0;
+      }
+
+      /* Class Selector */
+      .details {
+        margin-top: 30px;
+        background: #fff0f5;
+        padding: 25px;
+        border-radius: 20px;
+        border: 2px dashed #ff4081;
+      }
+
+      /* Descendant Selector */
+      .details p {
+        font-size: 22px;
+        margin: 12px 0;
+        color: #333;
+      }
+
+      /* Class Selector */
+      .highlight {
+        color: #ff006e;
+        font-weight: bold;
+      }
+
+      /* Group Selector */
+      h1,
+      h2 {
+        text-transform: uppercase;
+      }
+
+      /* Class Selector */
+      .footer {
+        margin-top: 30px;
+        font-size: 22px;
+        color: #666;
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="emoji">🎂 🎉 🎈</div>
+
+      <h1>Birthday Party</h1>
+
+      <h2>You Are Invited!</h2>
+
+      <p class="message">
+        We are delighted to invite you to celebrate a special birthday occasion
+        with us.
+      </p>
+
+      <div id="birthday-name">Harsh's 18th Birthday</div>
+
+      <p class="message">
+        Join us for an evening full of fun, laughter, music, games, and
+        delicious food. Your presence will make our celebration more memorable.
+      </p>
+
+      <div class="details">
+        <p>📅 <span class="highlight">Date:</span> 20 May 2026</p>
+
+        <p>⏰ <span class="highlight">Time:</span> 6:00 PM</p>
+
+        <p>
+          📍 <span class="highlight">Venue:</span> Royal Banquet Hall, Junagadh
+        </p>
+
+        <p>🍕 <span class="highlight">Dinner:</span> 8:00 PM</p>
+      </div>
+
+      <div class="footer">We look forward to celebrating with you!</div>
+    </div>
+  </body>
+</html>

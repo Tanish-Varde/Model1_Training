@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Grid Layout with Sidebar</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "sidebar content"
+          "footer footer";
+
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: 80px 400px 70px;
+
+        gap: 10px;
+        height: 100vh;
+        padding: 10px;
+      }
+
+      .header {
+        grid-area: header;
+        background: #444;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        font-size: 28px;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        background: #777;
+        color: white;
+        padding: 20px;
+      }
+
+      .content {
+        grid-area: content;
+        background: #ddd;
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      .footer {
+        grid-area: footer;
+        background: #444;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        margin-top: 20px;
+      }
+
+      .sidebar ul li {
+        padding: 12px;
+        background: #999;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">Header</div>
+
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h2>Main Content</h2>
+        <p>This is the content area created using CSS Grid Layout.</p>
+      </div>
+
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>

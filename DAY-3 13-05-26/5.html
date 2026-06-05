@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Two Ball Animation</title>
+
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #f0f0f0;
+        height: 100vh;
+        position: relative;
+      }
+
+      .ball1,
+      .ball2 {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      /* Red Ball */
+      .ball1 {
+        background: red;
+        top: 50px;
+        left: 0;
+
+        animation: moveRight 4s infinite alternate;
+      }
+
+      /* Blue Ball */
+      .ball2 {
+        background: blue;
+        bottom: 50px;
+        right: 0;
+
+        animation: moveLeft 4s infinite alternate;
+      }
+
+      @keyframes moveRight {
+        from {
+          left: 0;
+          transform: rotate(0deg);
+        }
+
+        to {
+          left: 80%;
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes moveLeft {
+        from {
+          right: 0;
+          transform: scale(1);
+        }
+
+        to {
+          right: 80%;
+          transform: scale(1.5);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ball1"></div>
+    <div class="ball2"></div>
+  </body>
+</html>

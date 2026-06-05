@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Student Registration</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>SOU College Portal</h1>
+    </header>
+
+    <nav>
+      <a href="#">Home</a> | <a href="#">Registration</a> |
+      <a href="#">Contact</a>
+    </nav>
+
+    <article>
+      <h2><u>Student Registration</u></h2>
+
+      <form>
+        <table cellpadding="8">
+          <tr>
+            <td>Name :</td>
+            <td><input type="text" name="name" required /></td>
+          </tr>
+
+          <tr>
+            <td>Enrollment No :</td>
+            <td>
+              <input type="text" name="enrollment" maxlength="12" required />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Branch :</td>
+            <td>
+              <select>
+                <option>Select Branch</option>
+                <option>CSE</option>
+                <option>IT</option>
+                <option>CE</option>
+                <option>CE-CS</option>
+                <option>CE-AIML</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Division :</td>
+            <td><input type="text" maxlength="1" required /></td>
+          </tr>
+
+          <tr>
+            <td>Gender :</td>
+            <td>
+              <input type="radio" name="gender" /> Male
+              <input type="radio" name="gender" /> Female
+            </td>
+          </tr>
+
+          <tr>
+            <td>Mobile No :</td>
+            <td><input type="tel" maxlength="10" required /></td>
+          </tr>
+
+          <tr>
+            <td>Email ID :</td>
+            <td><input type="email" required /></td>
+          </tr>
+
+          <tr>
+            <td>Password :</td>
+            <td><input type="password" required /></td>
+          </tr>
+
+          <tr>
+            <td>Photo :</td>
+            <td><input type="file" required /></td>
+          </tr>
+
+          <tr>
+            <td>Remarks :</td>
+            <td><textarea rows="4" cols="25" required></textarea></td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="submit" value="Submit" />
+            </td>
+
+            <td>
+              <input type="reset" value="Clear" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </article>
+
+    <footer>
+      <p>© 2026 SOU College. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

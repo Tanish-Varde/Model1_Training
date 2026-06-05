@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Media Query + Float + Layer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+      }
+
+      .container {
+        width: 90%;
+        margin: 40px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px gray;
+        overflow: hidden;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: darkblue;
+      }
+
+      .image-box {
+        float: left;
+        width: 40%;
+        position: relative;
+      }
+
+      .image-box img {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      .layer {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+
+        padding: 15px;
+        border-radius: 10px;
+
+        z-index: 2;
+      }
+
+      .content {
+        float: right;
+        width: 55%;
+      }
+
+      .content h2 {
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .content p {
+        font-size: 20px;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      @media screen and (max-width: 768px) {
+        .image-box,
+        .content {
+          float: none;
+          width: 100%;
+        }
+
+        .content {
+          margin-top: 20px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        .content p {
+          font-size: 18px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .container {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        .content h2 {
+          font-size: 22px;
+        }
+
+        .content p {
+          font-size: 16px;
+        }
+
+        .layer {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Media Query + Float + Layer Example</h1>
+      <div class="image-box">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          alt="Students"
+        />
+
+        <div class="layer">Web Development</div>
+      </div>
+
+      <div class="content">
+        <h2>Responsive Web Design</h2>
+
+        <p>
+          This example combines CSS Float, Layer using z-index, and Media
+          Queries in one webpage.
+        </p>
+
+        <p>
+          The image is floated to the left, text appears on the right, and a
+          layered text box is placed over the image. On smaller screens, the
+          layout automatically becomes responsive.
+        </p>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

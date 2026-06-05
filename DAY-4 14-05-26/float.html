@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS Float Example</title>
+
+    <style>
+      .container {
+        width: 80%;
+        margin: auto;
+        border: 2px solid black;
+        padding: 20px;
+      }
+
+      .left-box {
+        width: 200px;
+        height: 150px;
+        background: rgb(151, 13, 13);
+        float: left;
+        margin-right: 20px;
+        color: white;
+        text-align: center;
+        line-height: 150px;
+        font-size: 22px;
+      }
+
+      .right-box {
+        width: 200px;
+        height: 150px;
+        background: rgb(144, 27, 223);
+        float: right;
+        margin-left: 20px;
+        color: white;
+        text-align: center;
+        line-height: 150px;
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left-box">Float Left</div>
+
+      <div class="right-box">Float Right</div>
+
+      <p>
+        This is an example of CSS float property. The red box is floated to the
+        left and the blue box is floated to the right.
+      </p>
+    </div>
+  </body>
+</html>

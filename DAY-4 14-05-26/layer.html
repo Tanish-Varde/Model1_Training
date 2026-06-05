@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS Layer Example</title>
+
+    <style>
+      body {
+        background: #f2f2f2;
+      }
+
+      .container {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        margin: 80px auto;
+      }
+
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background: red;
+
+        position: absolute;
+        top: 20px;
+        left: 20px;
+
+        z-index: 1;
+      }
+
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background: blue;
+
+        position: absolute;
+        top: 70px;
+        left: 70px;
+
+        z-index: 2;
+      }
+
+      .box3 {
+        width: 200px;
+        height: 200px;
+        background: green;
+
+        position: absolute;
+        top: 120px;
+        left: 120px;
+
+        z-index: 3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box1"></div>
+
+      <div class="box2"></div>
+
+      <div class="box3"></div>
+    </div>
+  </body>
+</html>
